@@ -17,7 +17,8 @@ function App() {
         <Button variant="success" fit>Success</Button>
         <Button variant="danger" fit>Danger</Button>
         <TextInput type="email" placeholder="johndoe@gmail.com"/>
-        <TextArea placeholder="Zone de texte"/>
+        <TextArea placeholder="Text area"  rows={3}/>
+        <TextArea placeholder="Unresizable text area" unresizable rows={3}/>
         <Switch/>
         <Checkbox/>
         <Card container="article" spacing="large" fit>

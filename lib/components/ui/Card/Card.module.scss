@@ -3,8 +3,9 @@
 .UI_Card {
     background-color: $color-surface;
     border: solid 1px $color-border;
+    box-shadow: $shadow-md;
     display: flex;
-    
+
     &.large {
         padding: $spacing-xl;
         gap: $spacing-lg;

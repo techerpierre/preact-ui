@@ -14,4 +14,8 @@
         background-color: $color-transparent;
         cursor: pointer;
     }
+
+    &.unresizable {
+        resize: none;
+    }
 }

@@ -11,7 +11,7 @@
 @use "../ui/Text/Text.module.scss";
 
 * {
-    font-family: $font-main;
+    font-family: $font-main, sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;

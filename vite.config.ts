@@ -25,5 +25,10 @@ export default defineConfig({
         }
       }
     }
+  },
+  server: {
+    host: '0.0.0.0',  // Permet à Vite d'écouter sur toutes les interfaces réseau
+    port: 5173,        // Tu peux choisir un autre port si nécessaire
+    strictPort: true   // Optionnel, pour s'assurer que Vite n'utilise que ce port
   }
 })
