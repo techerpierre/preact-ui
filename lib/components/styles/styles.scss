@@ -1,0 +1,27 @@
+@use "fonts";
+@use "variables" as *;
+@use "mixings" as *;
+
+@use "../ui/Button/Button.module.scss";
+@use "../ui/TextArea/TextArea.module.scss";
+@use "../ui/TextInput/TextInput.module.scss";
+@use "../ui/Switch/Switch.module.scss";
+@use "../ui/Checkbox/Checkbox.module.scss";
+@use "../ui/Card/Card.module.scss";
+@use "../ui/Text/Text.module.scss";
+
+* {
+    font-family: $font-main;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-background;
+    color: $color-on-background;
+}
+
+.UI_fit {
+    width: fit-content;
+}

@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixings" as *;
+
+.UI_TextArea {
+    @include text-input-style;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: $color-transparent;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,92 @@
+@use "variables" as *;
+
+/*** TEXT ***/
+
+@mixin h1-style($use-margin: true) {
+    font-size: $font-size-h1;
+    font-weight: $font-wheight-h1;
+    line-height: $line-height-h1;
+
+    @if $use-margin == true {
+        margin: $text-margin-h1;
+    }
+}
+
+@mixin h2-style($use-margin: true) {
+    font-size: $font-size-h2;
+    font-weight: $font-wheight-h2;
+    line-height: $line-height-h2;
+
+    @if $use-margin == true {
+        margin: $text-margin-h2;
+    }
+}
+
+@mixin h3-style($use-margin: true) {
+    font-size: $font-size-h3;
+    font-weight: $font-wheight-h3;
+    line-height: $line-height-h3;
+
+    @if $use-margin == true {
+        margin: $text-margin-h3;
+    }
+}
+
+@mixin large-style($use-margin: true) {
+    font-size: $font-size-large;
+    font-weight: $font-wheight-large;
+    line-height: $line-height-large;
+
+    @if $use-margin == true {
+        margin: $text-margin-large;
+    }
+}
+
+@mixin regular-style($use-margin: true) {
+    font-size: $font-size-regular;
+    font-weight: $font-wheight-regular;
+    line-height: $line-height-regular;
+
+    @if $use-margin == true {
+        margin: $text-margin-regular;
+    }
+}
+
+@mixin small-style($use-margin: true) {
+    font-size: $font-size-small;
+    font-weight: $font-wheight-small;
+    line-height: $line-height-small;
+
+    @if $use-margin == true {
+        margin: $text-margin-small;
+    }
+}
+
+@mixin caption-style($use-margin: true) {
+    font-size: $font-size-caption;
+    font-weight: $font-wheight-caption;
+    line-height: $line-height-caption;
+
+    @if $use-margin == true {
+        margin: $text-margin-caption;
+    }
+}
+
+/*** TEXT INPUT/AREA ***/
+
+@mixin text-input-style {
+    @include regular-style(false);
+
+    position: relative;
+    padding: $spacing-sm;
+    border-radius: $radius-medium;
+    border: solid 1px $color-border;
+    outline: solid 0 $color-transparent;
+    will-change: outline-width;
+    transition: outline-width .1s linear;
+    outline-offset: 2px;
+
+    &:focus {
+        outline-width: 2px;
+    }
+}

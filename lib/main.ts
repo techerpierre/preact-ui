@@ -1,0 +1,8 @@
+import './components/styles/styles.scss'
+export { default as Button } from './components/ui/Button/Button'
+export { default as TextInput } from './components/ui/TextInput/TextInput'
+export { default as TextArea } from './components/ui/TextArea/TextArea'
+export { default as Switch } from './components/ui/Switch/Switch'
+export { default as Checkbox } from './components/ui/Checkbox/Checkbox'
+export { default as Card } from './components/ui/Card/Card'
+export { H1, H2, H3, P, Small } from './components/ui/Text/Text'

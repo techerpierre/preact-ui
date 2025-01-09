@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixings" as *;
+
+.UI_TextInput {
+    @include text-input-style;
+
+    &:invalid {
+        border-color: $color-danger;
+        outline-color: $color-danger;
+    }
+}

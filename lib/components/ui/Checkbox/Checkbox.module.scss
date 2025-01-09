@@ -1,0 +1,42 @@
+@use "../../styles/variables" as *;
+
+
+.UI_Checkbox {
+    $checkbox-size: $spacing-lg;
+    $checkbox-indicator-margin: 4px;
+    $checkbox-indicator-size: calc(#{$checkbox-size} - #{$checkbox-indicator-margin} * 2);
+
+    appearance: none;
+    -webkit-appearance: none;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    border-radius: $radius-full;
+    border: solid 1px $color-border;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    &__wrapper {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__indicator {
+        width: $checkbox-indicator-size;
+        height: $checkbox-indicator-size;
+        margin: $checkbox-indicator-margin;
+        background-color: $color-on-background;
+        border-radius: $radius-full;
+        position: absolute;
+        top: 0;
+        left: 0;
+        scale: 0;
+        will-change: scale;
+        transition: scale 0.03s linear;
+    }
+
+    &:checked + &__indicator {
+        scale: 1;
+    }
+}

@@ -1,0 +1,31 @@
+@use "../../styles/mixings" as *;
+
+.UI_H1 {
+    @include h1-style(true);
+}
+
+.UI_H2 {
+    @include h2-style(true);
+}
+
+.UI_H3 {
+    @include h3-style(true);
+}
+
+.UI_P {
+    &.large {
+        @include large-style(true);
+    }
+
+    &.regular {
+        @include regular-style(true);
+    }
+
+    &.small {
+        @include small-style(true);
+    }
+}
+
+.UI_Small {
+    @include caption-style(true);
+}

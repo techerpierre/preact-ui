@@ -1,0 +1,74 @@
+/*** COLOR ***/
+$color-primary: #0080e9;
+$color-secondary: #ff9839;
+$color-background: #f1f1f1;
+$color-surface: #fafafa;
+$color-border: #cdcdcd;
+$color-danger: #ff2929;
+$color-success: #0fca3b;
+$color-text-main: #000;
+$color-transparent: #0000001d;
+$color-text-light: #fff;
+$color-text-inverse: #fff;
+
+$color-on-primary: $color-text-light;
+$color-on-secondary: $color-text-light;
+$color-on-background: $color-text-main;
+$color-on-danger: $color-text-main;
+$color-on-success: $color-text-light;
+$color-on-surface: $color-text-main;
+
+/*** SPACING ***/
+$spacing-none: 0;
+$spacing-px: 1px;
+$spacing-xs: .25rem;
+$spacing-sm: .5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+/*** RADIUS ***/
+$radius-small: 4px;
+$radius-medium: 8px;
+$radius-large: 16px;
+$radius-full: 999px;
+
+/*** FONT SIZE ***/
+$font-size-h1: 2.25rem;
+$font-size-h2: 1.875rem;
+$font-size-h3: 1.5rem;
+$font-size-large: 1.125rem;
+$font-size-regular: 1rem;
+$font-size-small: .875rem;
+$font-size-caption: .75rem;
+
+/*** FONT WHEIGHT ***/
+$font-wheight-h1: bold;
+$font-wheight-h2: bold;
+$font-wheight-h3: 600;
+$font-wheight-large: 400;
+$font-wheight-regular: 400;
+$font-wheight-small: 400;
+$font-wheight-caption: 300;
+
+/*** LINE HEIGHT ***/
+$line-height-h1: 2.75rem;
+$line-height-h2: 2.375rem;
+$line-height-h3: 2rem;
+$line-height-large: 1.75rem;
+$line-height-regular: 1.5rem;
+$line-height-small: 1.25rem;
+$line-height-caption: 1rem;
+
+/*** TEXT-MARGIN ***/
+$text-margin-h1: 1.5rem 0;
+$text-margin-h2: 1.25rem 0;
+$text-margin-h3: 1.125rem 0;
+$text-margin-large: 1rem 0;
+$text-margin-regular: 0.875rem 0;
+$text-margin-small: 0.75rem 0;
+$text-margin-caption: 0.625rem 0;
+
+/*** FONTS ***/
+$font-main: "Roboto";
