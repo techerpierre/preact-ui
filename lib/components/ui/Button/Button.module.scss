@@ -11,18 +11,22 @@
     border-radius: $radius-medium;
     border: none;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
-    &.shadow {
+    &-shadow {
         background-color: transparent;
         color: $color-text-main;
     }
 
-    &.danger {
+    &-danger {
         background-color: $color-danger;
         color: $color-on-danger;
     }
 
-    &.success {
+    &-success {
         background-color: $color-success;
         color: $color-on-success;
     }
@@ -40,7 +44,13 @@
         transition: opacity .2s linear;
     }
 
-    &:hover::after, &:focus::after {
+    &:hover:not(:disabled)::after, &:focus:not(:disabled)::after {
         opacity: 1;
+    }
+
+    &:disabled {
+        background-color: $color-disabled;
+        color: $color-on-disabled;
+        cursor: default;
     }
 }

@@ -1,0 +1,34 @@
+@use "fonts";
+@use "variables" as *;
+
+* {
+    font-family: $font-main, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-background;
+    color: $color-on-background;
+}
+
+.UI_fit {
+    width: fit-content;
+}
+
+.UI_Row {
+    flex-direction: row;
+}
+
+.UI_Col {
+    flex-direction: column;
+}
+
+.UI_Hide {
+    display: none;
+}
+
+#UIModalContainer {
+    position: relative;
+}

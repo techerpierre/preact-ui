@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixings" as *;
+
+.UI_Calendar {
+    &__header {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        $calendar-button-size: 2rem;
+        width: $calendar-button-size;
+        height: $calendar-button-size;
+    }
+}

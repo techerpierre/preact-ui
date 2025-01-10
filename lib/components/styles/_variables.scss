@@ -2,10 +2,11 @@
 $color-primary: #0080e9;
 $color-secondary: #ff9839;
 $color-background: #f1f1f1;
-$color-surface: #fafafa;
+$color-surface: #f6f6f6;
 $color-border: #cdcdcd;
 $color-danger: #ff2929;
 $color-success: #0fca3b;
+$color-disabled: #e8e8e8;
 $color-text-main: #000;
 $color-transparent: #0000001d;
 $color-text-light: #fff;
@@ -17,6 +18,7 @@ $color-on-background: $color-text-main;
 $color-on-danger: $color-text-main;
 $color-on-success: $color-text-light;
 $color-on-surface: $color-text-main;
+$color-on-disabled: #5a5a5a;
 
 /*** SPACING ***/
 $spacing-none: 0;

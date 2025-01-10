@@ -13,15 +13,15 @@
 }
 
 .UI_P {
-    &.large {
+    &.UI_Text_Large {
         @include large-style(true);
     }
 
-    &.regular {
+    &.UI_Text_Regular {
         @include regular-style(true);
     }
 
-    &.small {
+    &.UI_Text_Small {
         @include small-style(true);
     }
 }

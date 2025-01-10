@@ -1,26 +1,21 @@
 @use "../../styles/variables" as *;
 
-.UI_Card {
-    background-color: $color-surface;
-    border: solid 1px $color-border;
-    box-shadow: $shadow-sm;
-    display: flex;
+.UI_Box {
+    display: inline-flex;
 
     &-large {
         padding: $spacing-xl;
         gap: $spacing-lg;
         border-radius: $radius-large;
     }
-
+    
     &-medium {
         padding: $spacing-md;
         gap: $spacing-sm;
-        border-radius: $radius-medium;
     }
-
+    
     &-small {
         padding: $spacing-sm;
-        gap: $spacing-xl;
-        border-radius: $radius-small;
+        gap: $spacing-sm;
     }
 }
