@@ -21,14 +21,19 @@
         color: $color-text-main;
     }
 
-    &-danger {
-        background-color: $color-danger;
-        color: $color-on-danger;
+    &-error {
+        background-color: $color-error;
+        color: $color-on-error;
     }
 
     &-success {
         background-color: $color-success;
         color: $color-on-success;
+    }
+
+    &-warning {
+        background-color: $color-warning;
+        color: $color-on-warning;
     }
 
     &::after {

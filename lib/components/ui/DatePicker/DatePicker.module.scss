@@ -2,16 +2,5 @@
 @use "../../styles/mixings" as *;
 
 .UI_DatePicker {
-    &__ModalContent {
-        align-items: center;
-    }
-
-    &__ModalInput {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    &__ModalText {
-        @include h1-style(false);
-    }
+    @include text-input-style;
 }

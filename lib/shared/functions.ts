@@ -1,3 +1,5 @@
+import { MOBILE_USER_AGENTS } from './constants'
+
 export function classes(...values: (string | null | undefined)[]): string {
     return values.reduce((acc, cur) => cur ? (acc ? acc : '') + ' ' + cur.trim() : acc, null)?.trim() || '';
 }
@@ -6,15 +8,6 @@ export function getOrientationClass(orientation: 'row' | 'col'): string {
     switch(orientation) {
         case 'row': return 'UI_Row';
         case 'col': return 'UI_Col';
-    }
-}
-
-export function getButtonVariantClass(variant?: 'shadow' | 'success' | 'danger'): string | null {
-    switch(variant) {
-        case 'shadow': return 'UI_Button-shadow';
-        case 'success': return 'UI_Button-success';
-        case 'danger': return 'UI_Button-danger';
-        default: return null;
     }
 }
 
@@ -46,23 +39,23 @@ export function getMapKey(subfix?: string): string {
     return `${Date.now()}-${Math.random()}-${subfix || 'a'}`;
 }
 
-export function createModalContainer() {
+export function createContainer(id: string) {
     const body = document.querySelector('body');
     const modalContainer = document.createElement('div');
-    modalContainer.id = 'UIModalContainer';
+    modalContainer.id = id;
     body?.appendChild(modalContainer);
 }
 
 export function getModalContainer() {
-    const modalContainer = document.getElementById("UIModalContainer");
+    const modalContainer = document.getElementById('UIModalContainer');
     if (!modalContainer) {
-        createModalContainer();
+        createContainer('UIModalContainer');
     }
-    return document.getElementById("UIModalContainer") as HTMLDivElement;
+    return document.getElementById('UIModalContainer') as HTMLDivElement;
 }
 
 export function getMonthName(date: Date): string {
-    return date.toLocaleString("default", { month: "long" });
+    return date.toLocaleString('default', { month: 'long' });
 }
 
 export interface TGetDateDataResult {
@@ -89,7 +82,7 @@ export function getDateData(date: Date): TGetDateDataResult {
 
     const firstDayOfMonth = new Date(year, month, 1);
     const lastDayOfMonth = new Date(year, month + 1, 0);
-    const startDayOfWeek = firstDayOfMonth.getDay();
+    const startDayOfWeek = (firstDayOfMonth.getDay() + 6) % 7;
     const daysInMonth = lastDayOfMonth.getDate();
     const totalDays = startDayOfWeek + daysInMonth;
     const padEnd = (7 - (totalDays % 7)) % 7;
@@ -137,7 +130,7 @@ export interface TUseCalendarWeekInfo {
 }
 
 export function getWeeksInfos(calendar: TGetDateDataResult, currentDate: Date): TUseCalendarWeekInfo[] {
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+    currentDate = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()));
     return Array.from({ length: calendar.weeks }).map((_, weekIndex) => {
         const isFirstWeek = weekIndex === 0;
         const isLastWeek = weekIndex === calendar.weeks - 1;
@@ -149,7 +142,7 @@ export function getWeeksInfos(calendar: TGetDateDataResult, currentDate: Date): 
             days: Array.from({ length: 7 }).map((_, dayIndex) => {
                 const index = 7 * weekIndex + dayIndex;
                 const dayOffset = (7 * weekIndex) + dayIndex - calendar.padsInWeeks.first;
-                const date = new Date(calendar.year, calendar.month.index, dayOffset + 1);
+                const date = new Date(Date.UTC(calendar.year, calendar.month.index, dayOffset + 1));
                 const isBeforeMonth = dayOffset < 0;
                 const isAfterMonth = dayOffset >= calendar.days.count;
                 const disabled = isBeforeMonth || isAfterMonth;
@@ -165,4 +158,22 @@ export function getWeeksInfos(calendar: TGetDateDataResult, currentDate: Date): 
             }),
         };
     });
+}
+
+export function formatDateForDateInput(date: Date): string {
+    return date.toISOString().split('T')[0];
+}
+
+export function isMobileDevice(): boolean {
+    return MOBILE_USER_AGENTS.test(
+        navigator.userAgent
+    );
+};
+
+export function getToastContainer() {
+    const toastContainer = document.getElementById('UIToastContainer');
+    if (!toastContainer) {
+        createContainer('UIToastContainer');
+    }
+    return document.getElementById('UIToastContainer') as HTMLDivElement;
 }

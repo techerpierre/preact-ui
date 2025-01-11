@@ -1,0 +1,84 @@
+@use "../../styles/variables" as *;
+
+.UI_Toast {
+    z-index: 15;
+    width: 15rem;
+    gap: .25rem;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    animation: toast-aparition 0.2s ease;
+
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    &__message, &__content {
+        margin: 0 !important;
+    }
+
+    &__progress_bar {
+        position: absolute;
+        bottom: 4px ;
+        left: 4px;
+        right: 4px;
+        height: 4px;
+        background-color: $color-background;
+        border-radius: $radius-small;
+        overflow: hidden;
+    }
+
+    &__progress_bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        will-change: scale;
+        animation: toast-progress-bar 3s linear;
+        transform-origin: left;
+    }
+
+    &__progress_bar-success::after {
+        background-color: $color-success;
+    }
+
+    &__progress_bar-error::after {
+        background-color: $color-error;
+    }
+
+    &__progress_bar-infos::after {
+        background-color: $color-primary;
+    }
+
+    &__progress_bar-warning::after {
+        background-color: $color-warning;
+    }
+
+    &-desapear {
+        opacity: 0;
+    }
+}
+
+@keyframes toast-progress-bar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes toast-aparition {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -90,3 +90,7 @@
         outline-width: 2px;
     }
 }
+
+@mixin animation-rotation($time: 0.5s) {
+    animation: rotation $time linear;
+}

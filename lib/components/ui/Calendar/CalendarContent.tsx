@@ -5,7 +5,6 @@ import Button from '../Button/Button'
 import { CalendarContext } from './CalendarContext'
 
 const CalendarContent: FC = () => {
-
     const { weeks, setCurrentDate } = useContext(CalendarContext);
 
     return (

@@ -33,7 +33,7 @@
         left: 0;
         scale: 0;
         will-change: scale;
-        transition: scale 0.03s linear;
+        transition: scale .08s ease-out;
     }
 
     &:checked + &__indicator {

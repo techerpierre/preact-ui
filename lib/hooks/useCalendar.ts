@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useMemo, useState } from 'react';
 import { getDateData, getWeeksInfos, TUseCalendarWeekInfo } from '../shared/functions'
 
 export interface TUseCalendarResult {
@@ -7,13 +7,16 @@ export interface TUseCalendarResult {
         name: string;
     }
     year: number;
+    currentDate: Date;
     setCurrentDate: Dispatch<SetStateAction<Date>>;
     setCurrentMonth: Dispatch<SetStateAction<number>>;
+    resetDate: () => void;
 }
 
 export default function useCalendar(defaultDate: Date): TUseCalendarResult {
     const [currentDate, setCurrentDate] = useState(defaultDate);
-    const [currentMonth, setCurrentMonth] = useState(defaultDate.getMonth());
+    const defaultMonth = useMemo(() => defaultDate.getMonth(), [defaultDate]);
+    const [currentMonth, setCurrentMonth] = useState(defaultMonth);
     const calendar = getDateData(new Date(currentDate.getFullYear(), currentMonth));
     const weeks = getWeeksInfos(calendar, currentDate);
 
@@ -23,7 +26,12 @@ export default function useCalendar(defaultDate: Date): TUseCalendarResult {
             name: calendar.month.name,
         },
         year: calendar.year,
+        currentDate,
         setCurrentDate,
         setCurrentMonth,
-    }
+        resetDate: () => {
+            setCurrentDate(defaultDate);
+            setCurrentMonth(defaultMonth);
+        },
+    };
 }

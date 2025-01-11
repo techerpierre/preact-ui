@@ -1,0 +1,1 @@
+export const MOBILE_USER_AGENTS = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;

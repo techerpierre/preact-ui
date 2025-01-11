@@ -5,7 +5,7 @@
     @include text-input-style;
 
     &:invalid {
-        border-color: $color-danger;
-        outline-color: $color-danger;
+        border-color: $color-error;
+        outline-color: $color-error;
     }
 }
